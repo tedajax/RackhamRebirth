@@ -196,7 +196,7 @@ namespace Tanks
                         Vector3 explodevel = new Vector3(QueenRandom.Next(-100, 100), QueenRandom.Next(-25, 25), QueenRandom.Next(-100, 100));
                         for (int j = 0; j < 5; j++)
                         {
-                            WindowManager.explosionParticle.AddParticle(explodepos, explodevel);
+                            //WindowManager.explosionParticle.AddParticle(explodepos, explodevel);
                         }
                     }
 
@@ -284,7 +284,7 @@ namespace Tanks
                             Vector3 explodevel = new Vector3(QueenRandom.Next(-100, 100), QueenRandom.Next(-25, 25), QueenRandom.Next(-100, 100));
                             for (int j = 0; j < 15; j++)
                             {
-                                WindowManager.explosionParticle.AddParticle(explodepos, explodevel);
+                                //WindowManager.explosionParticle.AddParticle(explodepos, explodevel);
                             }
                         }
                     }

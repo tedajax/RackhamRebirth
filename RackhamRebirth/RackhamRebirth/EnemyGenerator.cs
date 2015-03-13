@@ -124,7 +124,7 @@ namespace Tanks
         {
             if (active) active = false;
             for (int i=0; i<50;i++)
-                WindowManager.explosionParticle.AddParticle(WindowManager.V3FromV2(this.position+new Vector2(GenerationRandomizer.Next(-10,10),GenerationRandomizer.Next(-10,10))),Vector3.Zero);
+                //WindowManager.explosionParticle.AddParticle(WindowManager.V3FromV2(this.position+new Vector2(GenerationRandomizer.Next(-10,10),GenerationRandomizer.Next(-10,10))),Vector3.Zero);
             Collision.addboundlist.Add(new RegisteredBoundingSphere(this.position, 0,1,50,1));
             Collision.KillList.Add(this);
         }

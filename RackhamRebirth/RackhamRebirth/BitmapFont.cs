@@ -541,8 +541,8 @@ namespace XNAExtras
 			bool fSBOverride = (m_sbOverride != null);
 			SpriteBatch sb = (fSBOverride ? m_sbOverride : m_sb);
 
-			if (!fSBOverride)
-				sb.Begin(SpriteBlendMode.AlphaBlend);
+            //if (!fSBOverride)
+            //    sb.Begin(SpriteBlendMode.AlphaBlend);
 
 			// draw each character in the string
 			foreach (char c in str)
