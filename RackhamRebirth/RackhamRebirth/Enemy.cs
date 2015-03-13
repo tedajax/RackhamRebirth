@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 using XNAExtras;
 #endregion
 
@@ -186,8 +185,8 @@ namespace Tanks
             //Vector3 vel = new Vector3(Velocity.X, 0f, Velocity.Y);
             Vector3 vel = Vector3.Zero;
             this.active = false;
-            for (int x = 0; x < 5; x++)
-                WindowManager.explosionParticle.AddParticle(pos, vel);
+            //for (int x = 0; x < 5; x++)
+            //    WindowManager.explosionParticle.AddParticle(pos, vel);
             SwarmManager.EnemiesToDestroy.Add(this);
 //            Collision.addboundlist.Add(new RegisteredBoundingSphere(new BoundingSphere(new Vector3(position.X, 0, position.Y), 10), 1, new TimeSpan(0, 0, 0, 0, 100)));
               

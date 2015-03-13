@@ -1,6 +1,6 @@
 using System;
 
-namespace RackhamRebirth
+namespace Tanks
 {
 #if WINDOWS || XBOX
     static class Program

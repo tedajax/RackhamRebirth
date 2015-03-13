@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
 
 using XNAExtras;
@@ -145,8 +144,8 @@ namespace Tanks
                     explodepos = new Vector2(exploderandom.Next(exploderadius) - (exploderadius / 2), exploderandom.Next(exploderadius) - (exploderadius / 2));
                     for (int i = 0; i < 10; i++)
                     {
-                        WindowManager.explosionParticle.AddParticle(new Vector3(position.X + explodepos.X, 0f, position.Y + explodepos.Y), new Vector3
-                            (velocity.X + explodepos.X, 0f, velocity.Y + explodepos.Y));
+                        //WindowManager.explosionParticle.AddParticle(new Vector3(position.X + explodepos.X, 0f, position.Y + explodepos.Y), new Vector3
+                        //    (velocity.X + explodepos.X, 0f, velocity.Y + explodepos.Y));
                     }
                 }
 

@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 using XNAExtras;
 
 namespace Tanks
@@ -87,8 +86,8 @@ namespace Tanks
 
         public void KamikazieAndExplode()
         {
-            for (int x = 0; x < 5; x++)
-                WindowManager.explosionParticle.AddParticle(WindowManager.V3FromV2(Position), WindowManager.V3FromV2(Velocity));
+            //for (int x = 0; x < 5; x++)
+            //    WindowManager.explosionParticle.AddParticle(WindowManager.V3FromV2(Position), WindowManager.V3FromV2(Velocity));
             Collision.KillList.Add(this);
             BulletManager.BulletsToRemove.Add(mykey);
         }

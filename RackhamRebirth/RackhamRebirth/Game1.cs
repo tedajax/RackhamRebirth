@@ -23,11 +23,11 @@ namespace Tanks
         GraphicsDeviceManager graphics;
         ContentManager content;
 
-        public static ParticleSystem explosionParticle;
-        public static ParticleSystem fireParticle;
-        public static ParticleSystem smokeParticle;
+        //public static ParticleSystem explosionParticle;
+        //public static ParticleSystem fireParticle;
+        //public static ParticleSystem smokeParticle;
 
-        BloomComponent bloom;
+        //BloomComponent bloom;
 
         WindowManager windowManager;
 
@@ -41,21 +41,21 @@ namespace Tanks
 
             Components.Add(new GamerServicesComponent(this));
 
-            explosionParticle = new ExplosionParticleSystem(this, content);
-            fireParticle = new FireParticleSystem(this, content);
-            smokeParticle = new SmokePlumeParticleSystem(this, content);
+            //explosionParticle = new ExplosionParticleSystem(this, content);
+            //fireParticle = new FireParticleSystem(this, content);
+            //smokeParticle = new SmokePlumeParticleSystem(this, content);
 
-            Components.Add(explosionParticle);
-            Components.Add(fireParticle);
-            Components.Add(smokeParticle);
+            //Components.Add(explosionParticle);
+            //Components.Add(fireParticle);
+            //Components.Add(smokeParticle);
 
             windowManager = new WindowManager(this);
-            windowManager.SetParticles((ExplosionParticleSystem)explosionParticle, (FireParticleSystem)fireParticle, (SmokePlumeParticleSystem)smokeParticle);
+            //windowManager.SetParticles((ExplosionParticleSystem)explosionParticle, (FireParticleSystem)fireParticle, (SmokePlumeParticleSystem)smokeParticle);
 
             Components.Add(windowManager);
 
-            bloom = new BloomComponent(this);
-            Components.Add(bloom);
+            //bloom = new BloomComponent(this);
+            //Components.Add(bloom);
 
             windowManager.AddScreen(new TitleScreen(false));
         }
@@ -82,14 +82,8 @@ namespace Tanks
         /// load ResourceManagementMode.Manual content.
         /// </summary>
         /// <param name="loadAllContent">Which type of content to load.</param>
-        protected override void LoadGraphicsContent(bool loadAllContent)
+        protected override void LoadContent()
         {
-            if (loadAllContent)
-            {
-
-                // TODO: Load any ResourceManagementMode.Automatic content
-            }
-
             // TODO: Load any ResourceManagementMode.Manual content
         }
 
@@ -101,12 +95,9 @@ namespace Tanks
         /// Disposed by the GraphicsDevice during a Reset.
         /// </summary>
         /// <param name="unloadAllContent">Which type of content to unload.</param>
-        protected override void UnloadGraphicsContent(bool unloadAllContent)
+        protected override void UnloadContent()
         {
-            if (unloadAllContent == true)
-            {
-                content.Unload();
-            }
+            content.Unload();
         }
 
 

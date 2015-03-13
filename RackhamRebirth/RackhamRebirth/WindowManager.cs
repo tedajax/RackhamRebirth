@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
 using System.Xml.Serialization;
 #endregion
@@ -49,9 +48,9 @@ namespace Tanks
 
         private TextboxManager WindowManagerTextBoxes;
 
-        public static ExplosionParticleSystem explosionParticle;
-        public static FireParticleSystem fireParticle;
-        public static SmokePlumeParticleSystem smokeParticle;
+        //public static ExplosionParticleSystem explosionParticle;
+        //public static FireParticleSystem fireParticle;
+        //public static SmokePlumeParticleSystem smokeParticle;
 
         public static BoundingFrustum ScreenFrustum;
         
@@ -83,20 +82,20 @@ namespace Tanks
             get { return spriteBatch; }
         }
 
-        public ParticleSystem ExplosionParticleSystem
-        {
-            get { return explosionParticle; }
-        }
+        //public ParticleSystem ExplosionParticleSystem
+        //{
+        //    get { return explosionParticle; }
+        //}
 
-        public ParticleSystem FireParticleSystem
-        {
-            get { return fireParticle; }
-        }
+        //public ParticleSystem FireParticleSystem
+        //{
+        //    get { return fireParticle; }
+        //}
 
-        public ParticleSystem SmokeParticleSystem
-        {
-            get { return smokeParticle; }
-        }
+        //public ParticleSystem SmokeParticleSystem
+        //{
+        //    get { return smokeParticle; }
+        //}
 
         public Vector3 CameraPosition
         {
@@ -132,42 +131,36 @@ namespace Tanks
             
         }
 
-        public void SetParticles(ExplosionParticleSystem eps, FireParticleSystem fps, SmokePlumeParticleSystem sps)
-        {
-            explosionParticle = (ExplosionParticleSystem)eps;
-            fireParticle = (FireParticleSystem)fps;
-            smokeParticle = (SmokePlumeParticleSystem)sps;
+        //public void SetParticles(ExplosionParticleSystem eps, FireParticleSystem fps, SmokePlumeParticleSystem sps)
+        //{
+        //    explosionParticle = (ExplosionParticleSystem)eps;
+        //    fireParticle = (FireParticleSystem)fps;
+        //    smokeParticle = (SmokePlumeParticleSystem)sps;
 
-            explosionParticle.DrawOrder = 100;
-            fireParticle.DrawOrder = 200;
-            smokeParticle.DrawOrder = 300;
-        }
+        //    explosionParticle.DrawOrder = 100;
+        //    fireParticle.DrawOrder = 200;
+        //    smokeParticle.DrawOrder = 300;
+        //}
 
-        protected override void LoadGraphicsContent(bool loadAllContent)
+        protected override void LoadContent()
         {
-            if (loadAllContent)
-            {
-                spriteBatch = new SpriteBatch(GraphicsDevice);
-                gameFont = content.Load<SpriteFont>("Content\\SpriteFont1");
-            }
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            gameFont = content.Load<SpriteFont>("Content\\SpriteFont1");
 
             foreach (GameWindow window in windows)
             {
-                window.LoadGraphicsContent(loadAllContent);
+                window.LoadGraphicsContent(true);
             }
             
         }
 
-        protected override void UnloadGraphicsContent(bool unloadAllContent)
+        protected override void UnloadContent()
         {
-            if (unloadAllContent)
-            {
-                Content.Unload();
-            }
+            Content.Unload();
 
             foreach (GameWindow window in windows)
             {
-                window.UnloadGraphicsContent(unloadAllContent);
+                window.UnloadGraphicsContent(true);
             }
         }
 
@@ -421,7 +414,7 @@ namespace Tanks
             //Save the Keyboard State
             OldState = NewState;
 
-            explosionParticle.Update(gameTime);
+            //explosionParticle.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)

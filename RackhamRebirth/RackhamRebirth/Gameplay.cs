@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Storage;
 using XNAExtras;
 using System.Collections;
 #endregion
@@ -223,8 +222,8 @@ namespace Tanks
                     if (p.getReadyState() == 6)
                         if (gameTime.TotalGameTime.CompareTo(p.OnFire) > 0)
                         {
-                            for (int i = 0; i < 1; i++)
-                                WindowManager.smokeParticle.AddParticle(Vector3FromVector2(p.Position), Vector3FromVector2(p.Velocity));//.explosionParticle.AddParticle(new Vector3(p.Position.X, 1f, p.Position.Y), Vector3FromVector2(p.Velocity));
+                            //for (int i = 0; i < 1; i++)
+                            //    WindowManager.smokeParticle.AddParticle(Vector3FromVector2(p.Position), Vector3FromVector2(p.Velocity));//.explosionParticle.AddParticle(new Vector3(p.Position.X, 1f, p.Position.Y), Vector3FromVector2(p.Velocity));
 
                             p.OnFire = gameTime.TotalGameTime + new TimeSpan(0, 0, 0, 0, 100);
                         }
@@ -251,10 +250,10 @@ namespace Tanks
                     foreach (Swarm s in NewSwarms)
                     {
                         SwarmManager.addSwarm(s);
-                        for (int i = 0; i < 20; i++)
-                        {
-                            WindowManager.explosionParticle.AddParticle(WindowManager.V3FromV2(s.EnemiesInSwarm[0].Position), new Vector3(0, 0, 0));
-                        }
+                        //for (int i = 0; i < 20; i++)
+                        //{
+                        //    WindowManager.explosionParticle.AddParticle(WindowManager.V3FromV2(s.EnemiesInSwarm[0].Position), new Vector3(0, 0, 0));
+                        //}
                     }
                 }
 
@@ -321,9 +320,9 @@ namespace Tanks
             Matrix view = Matrix.CreateLookAt(cameraPosition, new Vector3(cameraPosition.X, 0f, cameraPosition.Z - .1f), new Vector3(0, 1, 0));
             Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), aspectRatio, 1.0f, 10000.0f);
 
-            WindowManager.explosionParticle.SetCamera(view, projection);
-            WindowManager.smokeParticle.SetCamera(view, projection);
-            WindowManager.fireParticle.SetCamera(view, projection);
+            //WindowManager.explosionParticle.SetCamera(view, projection);
+            //WindowManager.smokeParticle.SetCamera(view, projection);
+            //WindowManager.fireParticle.SetCamera(view, projection);
 
 
             WindowManager.SpriteBatch.Begin();
